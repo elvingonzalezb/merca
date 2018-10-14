@@ -1,0 +1,28 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^paginasadministrables.info/newcms/
+
+RewriteRule (.*) http://www.paginasadministrables.info/newcms/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+
+<IfModule mod_rewrite.c>
+
+	IndexIgnore *.zip *.txt *.sql *.mwb *.py *.cmd *.sh *.crx *.json *.md *.lock *.rst *.rar *.bak
+
+</IfModule>
+
+
+
+<IfModule mod_rewrite.c>
+
+    Options -Indexes
+
+</IfModule>
+
